@@ -1,0 +1,8 @@
+PUT http://10.47.223.147:8500/v1/agent/service/register
+Accept: application/json
+Content-Type: application/json
+
+{ "ID": "sms_147", "Name": "sms", "Tags": [ "v1" ], "Address": "10.47.223.147", "Port": 8070, "EnableTagOverride": false, "Check": { "DeregisterCriticalServiceAfter": "90m", "HTTP": "http://10.47.223.147:8070/sms/2", "Interval": "10s" } }
+
+Equivalent curl command (Replace <password> with real password):
+curl -i -H Accept:application/json -X PUT http://10.47.223.147:8500/v1/agent/service/register -H Content-Type:application/json -d '{ "ID": "sms_147", "Name": "sms", "Tags": [ "v1" ], "Address": "10.47.223.147", "Port": 8070, "EnableTagOverride": false, "Check": { "DeregisterCriticalServiceAfter": "90m", "HTTP": "http://10.47.223.147:8070/sms/2", "Interval": "10s" } }'
